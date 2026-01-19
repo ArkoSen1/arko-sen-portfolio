@@ -1,0 +1,4 @@
+server.js
+nodemon.json
+node_modules
+*.log
