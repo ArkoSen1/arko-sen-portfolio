@@ -1,12 +1,21 @@
-# ARKO Portfolio Website
+# ARKO Portfolio - React Application
 
-Portfolio website for ARKO - Visual Storyteller, featuring video editing, cinematography, and photography work.
+A modern portfolio website for ARKO, a visual storyteller, built with React and Vite.
 
-## 🚀 Quick Start
+## Features
+
+- Modern React architecture
+- WebGL background animations
+- Responsive design
+- Smooth scrolling navigation
+- Image lightbox gallery
+- Custom cursor effects
+- Loading animations
+- Mobile-friendly menu
+
+## Getting Started
 
 ### Installation
-
-Install the required dependencies:
 
 ```bash
 npm install
@@ -14,72 +23,70 @@ npm install
 
 ### Development
 
-Run the development server with auto-reload:
-
 ```bash
 npm run dev
 ```
 
-The site will be available at `http://localhost:3000` with automatic reloading when you make changes to files.
+The app will be available at `http://localhost:5173`
 
-### Production Build
-
-Build the production-ready version:
+### Build for Production
 
 ```bash
 npm run build
 ```
 
-This will:
-- Minify the HTML
-- Copy necessary files to the `dist/` directory
-- Optimize for production deployment
+The built files will be in the `dist` directory, ready for deployment.
 
-### Production Server
-
-Run the production server:
+### Preview Production Build
 
 ```bash
-npm run production
+npm run preview
 ```
 
-Or use the start script:
+## Deployment on Vercel
 
-```bash
-npm start
+1. Push your code to a Git repository (GitHub, GitLab, etc.)
+2. Import your repository in Vercel
+3. Vercel will automatically detect the Vite configuration
+4. The build command `npm run build` and output directory `dist` are already configured
+5. Deploy!
+
+The `vercel.json` file is included for additional configuration if needed.
+
+## Project Structure
+
+```
+├── public/
+│   └── profile_picture.jpg
+├── src/
+│   ├── components/
+│   │   ├── Navigation.jsx
+│   │   ├── Hero.jsx
+│   │   ├── Videos.jsx
+│   │   ├── Gallery.jsx
+│   │   ├── Services.jsx
+│   │   ├── Contact.jsx
+│   │   ├── Footer.jsx
+│   │   ├── CustomCursor.jsx
+│   │   ├── WebGLBackground.jsx
+│   │   └── Lightbox.jsx
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── index.html
+├── package.json
+├── vite.config.js
+└── vercel.json
 ```
 
-## 📁 Project Structure
+## Technologies Used
 
-```
-arko-sen-portfolio/
-├── index.html              # Main HTML file
-├── profile_picture.jpg     # Profile picture
-├── server.js              # Express server configuration
-├── build.js               # Build script for production
-├── package.json           # Node.js dependencies and scripts
-├── nodemon.json           # Nodemon configuration for dev
-└── dist/                  # Production build output (generated)
-```
+- React 18
+- Vite
+- WebGL for background animations
+- CSS3 with custom properties
+- Modern ES6+ JavaScript
 
-## 🛠️ Available Scripts
+## License
 
-- `npm run dev` - Start development server with auto-reload
-- `npm run build` - Build production-ready files
-- `npm run production` - Start production server
-- `npm start` - Start server (defaults to development)
-
-## 🌐 Deployment
-
-For production deployment:
-
-1. Run `npm run build` to create optimized files
-2. Deploy the `dist/` directory to your hosting service
-3. Or run `npm run production` if your hosting supports Node.js
-
-## 📝 Notes
-
-- The development server uses nodemon for automatic reloading
-- Production build minifies HTML and optimizes assets
-- The server automatically serves from `dist/` in production mode if it exists
-- Default port is 3000 (configurable via PORT environment variable)
+© 2024 ARKO. All rights reserved.
