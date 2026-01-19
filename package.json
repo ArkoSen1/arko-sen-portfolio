@@ -1,0 +1,26 @@
+{
+  "name": "arko-sen-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website for ARKO - Visual Storyteller",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "build": "node build.js",
+    "start": "node server.js",
+    "production": "NODE_ENV=production node server.js"
+  },
+  "keywords": [
+    "portfolio",
+    "visual-storyteller",
+    "video-editor"
+  ],
+  "author": "ARKO",
+  "license": "MIT",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

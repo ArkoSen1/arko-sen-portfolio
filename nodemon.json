@@ -1,0 +1,6 @@
+{
+  "watch": ["index.html", "server.js", "profile_picture.jpg"],
+  "ext": "html,js,jpg,jpeg,png,css",
+  "ignore": ["node_modules", "dist"],
+  "exec": "node server.js"
+}
