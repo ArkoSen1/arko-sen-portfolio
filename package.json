@@ -2,7 +2,6 @@
   "name": "arko-sen-portfolio",
   "version": "1.0.0",
   "description": "Portfolio website for ARKO - Visual Storyteller",
-  "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
     "build": "node build.js",
