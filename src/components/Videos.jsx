@@ -26,12 +26,56 @@ function Videos() {
   }, [])
 
   const videos = [
-    { title: 'Cinematic Reel', category: 'Cinematography' },
-    { title: 'Commercial Edit', category: 'Video Editing' },
-    { title: 'Music Video', category: 'Videography' },
-    { title: 'Event Coverage', category: 'Videography' },
-    { title: 'Documentary', category: 'Cinematography' },
-    { title: 'Brand Story', category: 'Video Editing' },
+    { 
+      id: '1dtbQ2KZR8sAKXn0B-iR5SjuemfTvEj7M',
+      title: 'Video 1', 
+      category: 'Portfolio' 
+    },
+    { 
+      id: '1lUr5mdRGZclRf4Kh3SmuT-PCO_QF9DvF',
+      title: 'Video 2', 
+      category: 'Portfolio' 
+    },
+    { 
+      id: '1gFJ1lwJfWods2Gul24vHzg9wbjS9nbSA',
+      title: 'Video 3', 
+      category: 'Portfolio' 
+    },
+    { 
+      id: '1MMIJ7HkrDbOt2jglev2_0rqgp7zrwVao',
+      title: 'Video 4', 
+      category: 'Portfolio' 
+    },
+    { 
+      id: '1ZM7adiQ1q_eiwpkOsdqSlVsT2H4BiXk6',
+      title: 'Video 5', 
+      category: 'Portfolio' 
+    },
+    { 
+      id: '1-0znS_v1SZTZ2_4AlnrxPfvHb7I_rdfD',
+      title: 'Video 6', 
+      category: 'Portfolio' 
+    },
+    { 
+      id: '1i2wxV5nYYn7kftmuk5r49jjAvpCXmuLr',
+      title: 'Video 7', 
+      category: 'Portfolio' 
+    },
+    { 
+      id: '1cuBuFaDtsTzZroIhWTJuyzx8XzWUaKDb',
+      title: 'Video 8', 
+      category: 'Portfolio' 
+    },
+    { 
+      id: '1ZZ9PY0HowsIAepp1eG7Sd0ASkhEpN4Cq',
+      title: 'Video 9', 
+      category: 'Portfolio' 
+    },
+    { 
+      id: '1mpTrbMzDM5eX38t2XzBsPvAxM7hfCF0_',
+      title: 'Video 10', 
+      category: 'Portfolio' 
+    },
   ]
 
   return (
@@ -42,21 +86,23 @@ function Videos() {
       </div>
       
       <div className="video-grid">
-        {videos.map((video, index) => (
-          <div key={index} className="video-card reveal" ref={el => revealRefs.current[index + 1] = el}>
-            <div className="video-placeholder">
-              <div className="play-icon">
-                <svg viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
+        {videos.map((video, index) => {
+          const embedUrl = `https://drive.google.com/file/d/${video.id}/preview`
+          return (
+            <div key={index} className="video-card reveal" ref={el => revealRefs.current[index + 1] = el}>
+              <iframe
+                src={embedUrl}
+                allow="autoplay"
+                allowFullScreen
+                title={video.title}
+              ></iframe>
+              <div className="video-info">
+                <h3 className="video-title">{video.title}</h3>
+                <span className="video-category">{video.category}</span>
               </div>
             </div>
-            <div className="video-info">
-              <h3 className="video-title">{video.title}</h3>
-              <span className="video-category">{video.category}</span>
-            </div>
-          </div>
-        ))}
+          )
+        })}
       </div>
     </section>
   )
