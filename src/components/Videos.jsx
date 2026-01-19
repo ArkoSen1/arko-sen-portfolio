@@ -1,7 +1,8 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 function Videos() {
   const revealRefs = useRef([])
+  const [showAll, setShowAll] = useState(false)
 
   useEffect(() => {
     const revealElements = revealRefs.current
@@ -24,6 +25,25 @@ function Videos() {
 
     return () => window.removeEventListener('scroll', reveal)
   }, [])
+
+  useEffect(() => {
+    // Trigger reveal animation for newly shown videos
+    if (showAll) {
+      setTimeout(() => {
+        const revealElements = revealRefs.current
+        revealElements.forEach(el => {
+          if (!el) return
+          const windowHeight = window.innerHeight
+          const elementTop = el.getBoundingClientRect().top
+          const revealPoint = 150
+
+          if (elementTop < windowHeight - revealPoint) {
+            el.classList.add('active')
+          }
+        })
+      }, 100)
+    }
+  }, [showAll])
 
   const videos = [
     { 
@@ -86,7 +106,7 @@ function Videos() {
       </div>
       
       <div className="video-grid">
-        {videos.map((video, index) => {
+        {videos.slice(0, showAll ? videos.length : 2).map((video, index) => {
           const embedUrl = `https://drive.google.com/file/d/${video.id}/preview`
           return (
             <div key={index} className="video-card reveal" ref={el => revealRefs.current[index + 1] = el}>
@@ -104,6 +124,14 @@ function Videos() {
           )
         })}
       </div>
+      
+      {!showAll && videos.length > 2 && (
+        <div className="see-more-container">
+          <button className="see-more-btn" onClick={() => setShowAll(true)}>
+            SEE MORE
+          </button>
+        </div>
+      )}
     </section>
   )
 }
